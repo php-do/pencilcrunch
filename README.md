@@ -2,8 +2,8 @@
 Complete School Management System created with the CodeIgniter PHP framework
 
 #INSTALLATION
-• Upload the downloaded zip file to your server in the public_html directory.
-• Extract the zip file
+• Upload the project (or downloaded zip file) to your server in the public_html directory.
+• Extract the zip file (if downloaded as zip file)
 • Create a new database from your server mysql.
 • Create user to the database and link the database to the user.
 • Open the file database.php from the directory /application/config/database.php
