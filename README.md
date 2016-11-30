@@ -2,14 +2,14 @@
 Complete School Management System created with the CodeIgniter PHP framework
 
 #INSTALLATION
-• Upload the project (or downloaded zip file) to your server in the public_html directory.
-• Extract the zip file (if downloaded as zip file)
-• Create a new database from your server mysql.
-• Create user to the database and link the database to the user.
-• Open the file database.php from the directory /application/config/database.php
-• Fill up these informations with your database hostname, database username, database password, database name respectively which you have created in the previous step.
-• Open the file routes.php from the directory /application/config/routes.php
-• Change default controller from ‘install’ to ‘login’
+* Upload the project (or downloaded zip file) to your server in the public_html directory.
+* Extract the zip file (if downloaded as zip file)
+* Create a new database from your server mysql.
+* Create user to the database and link the database to the user.
+* Open the file database.php from the directory /application/config/database.php
+* Fill up these informations with your database hostname, database username, database password, database name respectively which you have created in the previous step.
+* Open the file routes.php from the directory /application/config/routes.php
+* Change default controller from ‘install’ to ‘login’
 
 ```php
 'hostname' => '',
@@ -18,9 +18,9 @@ Complete School Management System created with the CodeIgniter PHP framework
 'database' => '',
 ```
 
-• Now from server phpmyadmin go to your database. Select import and choose the file install.sql located in uploads/install.sql
-• And you are ready to go now to browse the application.
-• Default admin credentials
+* Now from server phpmyadmin go to your database. Select import and choose the file install.sql located in uploads/install.sql
+* And you are ready to go now to browse the application.
+* Default admin credentials
   Email: admin@example.com
   Password: 1234
 
