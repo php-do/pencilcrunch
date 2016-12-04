@@ -26,7 +26,7 @@ For a step-by-step guide on installing PencilCrunch please visit our [Wiki](http
 * [Marcos Fermin](https://github.com/marcosfermin)
 
 Contributions
-* Please see our [Contribution Documents](https://github.com/psanders/pencilcrunch/blob/master/CONTRIBUTING.md)
+* Please see our [Contribution Documents](https://github.com/marcosfermin/pencilcrunch/blob/master/CONTRIBUTING.md)
 * [Contributors](https://github.com/marcosfermin/pencilcrunch/graphs/contributors)
 
 ## Copyright
