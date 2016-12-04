@@ -11,7 +11,7 @@ Complete School Management System created with the CodeIgniter PHP framework
 
 ## Getting started with PencilCrunch
 
-The fasted way to get started with PC is using Docker. The pencilcrunch-docker image contains all the artifacts that you need to get up and running in minutes. Assuming you have Docker and Git already installed, all you need to do is:
+The fastest way to get started with PC is using Docker. The pencilcrunch-docker image contains all the artifacts that you need to get up and running in minutes. Assuming you have Docker and Git already installed, all you need to do is:
 
 ```bash
 git clone https://github.com/marcosfermin/pencilcrunch
