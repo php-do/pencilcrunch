@@ -15,6 +15,7 @@ The fasted way to get started with PC is using Docker. The pencilcrunch-docker i
 
 ```bash
 git clone https://github.com/marcosfermin/pencilcrunch
+cd pencilcrunch
 docker build -t pencilcrunch .
 docker run -d -p 80:80 pencilcrunch
 ```
