@@ -20,7 +20,7 @@ docker run -d -p 80:80 pencilcrunch
 ```
 
 In your browser open the URL `http://localhost` and begin exploring PC. The default credentails are `admin@example.com/1234`.
-For a step-by-step guide on installing PencilCrunch please visit our [Wiki](https://github.com/psanders/pencilcrunch/wiki).
+For a step-by-step guide on installing PencilCrunch please visit our [Wiki](https://github.com/marcosfermin/pencilcrunch/wiki).
 
 ## Author
 * [Marcos Fermin](https://github.com/marcosfermin)
