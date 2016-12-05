@@ -19,7 +19,7 @@
 					<?php 
                     foreach($edit_data as $row):
                         ?>
-                        <?php echo form_open(base_url() . 'index.php?parents/manage_profile/update_profile_info' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                        <?php echo form_open(base_url() . 'parents/manage_profile/update_profile_info' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('name');?></label>
                                 <div class="col-sm-5">
@@ -72,7 +72,7 @@
 					<?php 
                     foreach($edit_data as $row):
                         ?>
-                        <?php echo form_open(base_url() . 'index.php?parents/manage_profile/change_password' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                        <?php echo form_open(base_url() . 'parents/manage_profile/change_password' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('current_password');?></label>
                                 <div class="col-sm-5">

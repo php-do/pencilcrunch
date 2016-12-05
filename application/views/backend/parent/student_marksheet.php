@@ -18,7 +18,7 @@
                             <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
                             <td><?php echo $row['name'];?></td>
                             <td>
-                                <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
+                                <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
                                       <i class="entypo-chart-bar"></i>
                                           <?php echo get_phrase('view_marksheet');?>
                                       </a>

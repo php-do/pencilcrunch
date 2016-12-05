@@ -1,7 +1,7 @@
 <hr />
 
     <div class="row">
-    <?php echo form_open(base_url() . 'index.php?admin/system_settings/do_update' , 
+    <?php echo form_open(base_url() . 'admin/system_settings/do_update' , 
       array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
         <div class="col-md-6">
             
@@ -274,7 +274,7 @@
             
             </div>
 
-            <?php echo form_open(base_url() . 'index.php?admin/system_settings/upload_logo' , array(
+            <?php echo form_open(base_url() . 'admin/system_settings/upload_logo' , array(
             'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top' , 'enctype' => 'multipart/form-data'));?>
 
               <div class="panel panel-primary" >
@@ -331,8 +331,8 @@
     $(".gallery-env").on('click', 'a', function () {
         skin = this.id;
         $.ajax({
-            url: '<?php echo base_url();?>index.php?admin/system_settings/change_skin/'+ skin,
-            success: window.location = '<?php echo base_url();?>index.php?admin/system_settings/'
+            url: '<?php echo base_url();?>admin/system_settings/change_skin/'+ skin,
+            success: window.location = '<?php echo base_url();?>admin/system_settings/'
         });
 });
 </script>

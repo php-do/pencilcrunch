@@ -50,7 +50,7 @@
                                     <?php if ($row['due'] != 0):?>
 
                                     <li>
-                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_take_payment/<?php echo $row['invoice_id'];?>');">
+                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_take_payment/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-bookmarks"></i>
                                                 <?php echo get_phrase('take_payment');?>
                                         </a>
@@ -60,7 +60,7 @@
                                     
                                     <!-- VIEWING LINK -->
                                     <li>
-                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_view_invoice/<?php echo $row['invoice_id'];?>');">
+                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_view_invoice/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-credit-card"></i>
                                                 <?php echo get_phrase('view_invoice');?>
                                             </a>
@@ -69,7 +69,7 @@
                                     
                                     <!-- EDITING LINK -->
                                     <li>
-                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_invoice/<?php echo $row['invoice_id'];?>');">
+                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_edit_invoice/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-pencil"></i>
                                                 <?php echo get_phrase('edit');?>
                                         </a>
@@ -78,7 +78,7 @@
 
                                     <!-- DELETION LINK -->
                                     <li>
-                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/invoice/delete/<?php echo $row['invoice_id'];?>');">
+                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/invoice/delete/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-trash"></i>
                                                 <?php echo get_phrase('delete');?>
                                             </a>
@@ -96,7 +96,7 @@
             
 			<!----CREATION FORM STARTS---->
 			<div class="tab-pane box" id="add" style="padding: 5px">
-            <?php echo form_open(base_url() . 'index.php?admin/invoice/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+            <?php echo form_open(base_url() . 'admin/invoice/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="panel panel-default panel-shadow" data-collapsed="0">

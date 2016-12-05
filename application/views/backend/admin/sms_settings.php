@@ -33,7 +33,7 @@
 
 				<div class="tab-pane active" id="b-profile">
 
-					<?php echo form_open(base_url() . 'index.php?admin/sms_settings/active_service' , 
+					<?php echo form_open(base_url() . 'admin/sms_settings/active_service' , 
 						array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 
 					<div class="form-group">
@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="tab-pane" id="v-home">
-					<?php echo form_open(base_url() . 'index.php?admin/sms_settings/clickatell' , 
+					<?php echo form_open(base_url() . 'admin/sms_settings/clickatell' , 
 						array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 						<div class="form-group">
 	                      <label  class="col-sm-3 control-label"><?php echo get_phrase('clickatell_username');?></label>
@@ -97,7 +97,7 @@
 	                <?php echo form_close();?>
 				</div>
 				<div class="tab-pane" id="v-profile">
-					<?php echo form_open(base_url() . 'index.php?admin/sms_settings/twilio' , 
+					<?php echo form_open(base_url() . 'admin/sms_settings/twilio' , 
 						array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 						<div class="form-group">
 	                      <label  class="col-sm-3 control-label"><?php echo get_phrase('twilio_account');?> SID</label>

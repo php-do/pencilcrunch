@@ -44,7 +44,7 @@
                                     
                                     <!-- EDITING LINK -->
                                     <li>
-                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_class/<?php echo $row['class_id'];?>');">
+                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_edit_class/<?php echo $row['class_id'];?>');">
                                             <i class="entypo-pencil"></i>
                                                 <?php echo get_phrase('edit');?>
                                             </a>
@@ -53,7 +53,7 @@
                                     
                                     <!-- DELETION LINK -->
                                     <li>
-                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?teacher/classes/delete/<?php echo $row['class_id'];?>');">
+                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>teacher/classes/delete/<?php echo $row['class_id'];?>');">
                                             <i class="entypo-trash"></i>
                                                 <?php echo get_phrase('delete');?>
                                             </a>

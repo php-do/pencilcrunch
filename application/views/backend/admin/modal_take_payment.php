@@ -61,7 +61,7 @@ foreach ($edit_data as $row):
                 <div class="panel-title"><?php echo get_phrase('take_payment');?></div>
             </div>
             <div class="panel-body">
-				<?php echo form_open(base_url() . 'index.php?admin/invoice/take_payment/'.$row['invoice_id'], array(
+				<?php echo form_open(base_url() . 'admin/invoice/take_payment/'.$row['invoice_id'], array(
 					'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 
 					<div class="form-group">

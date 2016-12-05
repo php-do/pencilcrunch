@@ -1,4 +1,4 @@
-<button onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_study_material_add');" 
+<button onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_study_material_add');" 
     class="btn btn-primary pull-right">
         <?php echo get_phrase('add_study_material'); ?>
 </button>
@@ -37,12 +37,12 @@
                     </a>
                 </td>
                 <td>
-                    <a  onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_study_material_edit/<?php echo $row['document_id']?>');" 
+                    <a  onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_study_material_edit/<?php echo $row['document_id']?>');" 
                         class="btn btn-default btn-sm btn-icon icon-left">
                             <i class="entypo-pencil"></i>
                             Edit
                     </a>
-                    <a href="<?php echo base_url();?>index.php?teacher/study_material/delete/<?php echo $row['document_id']?>" 
+                    <a href="<?php echo base_url();?>teacher/study_material/delete/<?php echo $row['document_id']?>" 
                         class="btn btn-danger btn-sm btn-icon icon-left" onclick="return confirm('Are you sure to delete?');">
                             <i class="entypo-cancel"></i>
                             Delete

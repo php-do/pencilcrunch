@@ -28,7 +28,7 @@ foreach ($messages as $row):
 
 <?php endforeach; ?>
 
-<?php echo form_open(base_url() . 'index.php?admin/message/send_reply/' . $current_message_thread_code, array('enctype' => 'multipart/form-data')); ?>
+<?php echo form_open(base_url() . 'admin/message/send_reply/' . $current_message_thread_code, array('enctype' => 'multipart/form-data')); ?>
 <div class="mail-reply">
     <div class="compose-message-editor">
         <textarea row="5" class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" name="message" 

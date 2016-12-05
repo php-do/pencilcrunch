@@ -15,13 +15,13 @@
 				<?php if ($account_type != 'parent'):?>
 				<ul class="dropdown-menu <?php if ($text_align == 'right-to-left') echo 'pull-right'; else echo 'pull-left';?>">
 					<li>
-						<a href="<?php echo base_url();?>index.php?<?php echo $account_type;?>/manage_profile">
+						<a href="<?php echo base_url();?><?php echo $account_type;?>/manage_profile">
                         	<i class="entypo-info"></i>
 							<span><?php echo get_phrase('edit_profile');?></span>
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url();?>index.php?<?php echo $account_type;?>/manage_profile">
+						<a href="<?php echo base_url();?><?php echo $account_type;?>/manage_profile">
                         	<i class="entypo-key"></i>
 							<span><?php echo get_phrase('change_password');?></span>
 						</a>
@@ -31,13 +31,13 @@
 				<?php if ($account_type == 'parent'):?>
 				<ul class="dropdown-menu <?php if ($text_align == 'right-to-left') echo 'pull-right'; else echo 'pull-left';?>">
 					<li>
-						<a href="<?php echo base_url();?>index.php?parents/manage_profile">
+						<a href="<?php echo base_url();?>parents/manage_profile">
                         	<i class="entypo-info"></i>
 							<span><?php echo get_phrase('edit_profile');?></span>
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url();?>index.php?parents/manage_profile">
+						<a href="<?php echo base_url();?>parents/manage_profile">
                         	<i class="entypo-key"></i>
 							<span><?php echo get_phrase('change_password');?></span>
 						</a>
@@ -64,7 +64,7 @@
                                 if($field == 'phrase_id' || $field == 'phrase')continue;
                                 ?>
                                     <li class="<?php if($this->session->userdata('current_language') == $field)echo 'active';?>">
-                                        <a href="<?php echo base_url();?>index.php?multilanguage/select_language/<?php echo $field;?>">
+                                        <a href="<?php echo base_url();?>multilanguage/select_language/<?php echo $field;?>">
                                             <img src="assets/images/flag/<?php echo $field;?>.png" style="width:16px; height:16px;" />	
 												 <span><?php echo $field;?></span>
                                         </a>
@@ -80,7 +80,7 @@
 			<!--<li class="sep"></li>-->
 			
 			<li>
-				<a href="<?php echo site_url('index.php?login/logout'); ?>">
+				<a href="<?php echo site_url('login/logout'); ?>">
 					Log Out <i class="entypo-logout right"></i>
 				</a>
 			</li>

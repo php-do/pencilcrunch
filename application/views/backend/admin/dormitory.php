@@ -42,7 +42,7 @@
                                     
                                     <!-- EDITING LINK -->
                                     <li>
-                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_dormitory/<?php echo $row['dormitory_id'];?>');">
+                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_edit_dormitory/<?php echo $row['dormitory_id'];?>');">
                                             <i class="entypo-pencil"></i>
                                                 <?php echo get_phrase('edit');?>
                                             </a>
@@ -51,7 +51,7 @@
                                     
                                     <!-- DELETION LINK -->
                                     <li>
-                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/dormitory/delete/<?php echo $row['dormitory_id'];?>');">
+                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/dormitory/delete/<?php echo $row['dormitory_id'];?>');">
                                             <i class="entypo-trash"></i>
                                                 <?php echo get_phrase('delete');?>
                                             </a>
@@ -70,7 +70,7 @@
 			<!----CREATION FORM STARTS---->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
-                	<?php echo form_open(base_url() . 'index.php?admin/dormitory/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                	<?php echo form_open(base_url() . 'admin/dormitory/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('dormitory_name');?></label>
                                 <div class="col-sm-5">

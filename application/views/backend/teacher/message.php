@@ -13,7 +13,7 @@
 
         <!-- compose new email button -->
         <div class="mail-sidebar-row hidden-xs">
-            <a href="<?php echo base_url(); ?>index.php?teacher/message/message_new" class="btn btn-success btn-icon btn-block">
+            <a href="<?php echo base_url(); ?>teacher/message/message_new" class="btn btn-success btn-icon btn-block">
                 <?php echo get_phrase('new_message'); ?>
                 <i class="entypo-pencil"></i>
             </a>
@@ -41,7 +41,7 @@
                 $unread_message_number = $this->crud_model->count_unread_message_of_thread($row['message_thread_code']);
                 ?>
                 <li class="<?php if (isset($current_message_thread_code) && $current_message_thread_code == $row['message_thread_code']) echo 'active'; ?>">
-                    <a href="<?php echo base_url(); ?>index.php?teacher/message/message_read/<?php echo $row['message_thread_code']; ?>" style="padding:12px;">
+                    <a href="<?php echo base_url(); ?>teacher/message/message_read/<?php echo $row['message_thread_code']; ?>" style="padding:12px;">
                         <i class="entypo-dot"></i>
 
                         <?php echo $this->db->get_where($user_to_show_type, array($user_to_show_type . '_id' => $user_to_show_id))->row()->name; ?>

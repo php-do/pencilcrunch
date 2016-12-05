@@ -35,7 +35,7 @@
 						<div class="row">
                     	<?php 
 						$current_editing_language	=	$edit_profile;
-						echo form_open(base_url() . 'index.php?admin/manage_language/update_phrase/'.$current_editing_language  , array('id' => 'phrase_form'));
+						echo form_open(base_url() . 'admin/manage_language/update_phrase/'.$current_editing_language  , array('id' => 'phrase_form'));
 						$count = 1;
 						$language_phrases	=	$this->db->query("SELECT `phrase_id` , `phrase` , `$current_editing_language` FROM `language`")->result_array();
 						foreach($language_phrases as $row)
@@ -95,11 +95,11 @@
                     	<tr>
                         	<td><?php echo ucwords($field);?></td>
                         	<td>
-                            	<a href="<?php echo base_url();?>index.php?admin/manage_language/edit_phrase/<?php echo $field;?>"
+                            	<a href="<?php echo base_url();?>admin/manage_language/edit_phrase/<?php echo $field;?>"
                                 	 class="btn btn-info">
                                 		<?php echo get_phrase('edit_phrase');?>
                                 </a>
-                            	<a href="<?php echo base_url();?>index.php?admin/manage_language/delete_language/<?php echo $field;?>"
+                            	<a href="<?php echo base_url();?>admin/manage_language/delete_language/<?php echo $field;?>"
                                 	rel="tooltip" data-placement="top" data-original-title="<?php echo get_phrase('delete_language');?>" class="btn btn-gray" onclick="return confirm('Delete Language ?');">
                                 		<i class="icon-trash"></i>
                                 </a>
@@ -117,7 +117,7 @@
 			<!----PHRASE CREATION FORM STARTS---->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
-                    <?php echo form_open(base_url() . 'index.php?admin/manage_language/add_phrase/' , array('class' => 'form-horizontal form-groups-bordered validate'));?>
+                    <?php echo form_open(base_url() . 'admin/manage_language/add_phrase/' , array('class' => 'form-horizontal form-groups-bordered validate'));?>
                         <div class="padded">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('phrase');?></label>
@@ -140,7 +140,7 @@
         	<!----ADD NEW LANGUAGE---->
 			<div class="tab-pane box" id="add_lang" style="padding: 5px">
                 <div class="box-content">
-                    <?php echo form_open(base_url() . 'index.php?admin/manage_language/add_language/' , array('class' => 'form-horizontal form-groups-bordered validate'));?>
+                    <?php echo form_open(base_url() . 'admin/manage_language/add_language/' , array('class' => 'form-horizontal form-groups-bordered validate'));?>
                         <div class="padded">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('language');?></label>

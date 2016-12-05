@@ -68,14 +68,14 @@
                                                             </button>
 															<ul class="dropdown-menu">
 																<li>
-                                                                <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_class_routine/<?php echo $row2['class_routine_id'];?>');">
+                                                                <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_edit_class_routine/<?php echo $row2['class_routine_id'];?>');">
                                                                     <i class="entypo-pencil"></i>
                                                                         <?php echo get_phrase('edit');?>
                                                                     			</a>
                                                          </li>
                                                          
                                                          <li>
-                                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/class_routine/delete/<?php echo $row2['class_routine_id'];?>');">
+                                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/class_routine/delete/<?php echo $row2['class_routine_id'];?>');">
                                                                 <i class="entypo-trash"></i>
                                                                     <?php echo get_phrase('delete');?>
                                                                 </a>
@@ -105,7 +105,7 @@
 			<!----CREATION FORM STARTS---->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
-                	<?php echo form_open(base_url() . 'index.php?admin/class_routine/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                	<?php echo form_open(base_url() . 'admin/class_routine/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('class');?></label>
                                 <div class="col-sm-5">
@@ -191,7 +191,7 @@
 <script type="text/javascript">
     function get_class_subject(class_id) {
         $.ajax({
-            url: '<?php echo base_url();?>index.php?admin/get_class_subject/' + class_id ,
+            url: '<?php echo base_url();?>admin/get_class_subject/' + class_id ,
             success: function(response)
             {
                 jQuery('#subject_selection_holder').html(response);

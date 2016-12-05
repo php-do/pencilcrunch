@@ -14,7 +14,7 @@
             <!----TABLE LISTING STARTS-->
             <div class="tab-pane  <?php if(!isset($edit_data) && !isset($personal_profile) && !isset($academic_result) )echo 'active';?>" id="list">
 				<center>
-                <?php echo form_open(base_url() . 'index.php?student/marks');?>
+                <?php echo form_open(base_url() . 'student/marks');?>
                 <table border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
                 	<tr>
                         <td><?php echo get_phrase('select_exam');?></td>

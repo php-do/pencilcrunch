@@ -1,5 +1,5 @@
 <hr />
-<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/student_add/');" 
+<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/student_add/');" 
     class="btn btn-primary pull-right">
         <i class="entypo-plus-circled"></i>
         <?php echo get_phrase('add_new_student');?>
@@ -66,7 +66,7 @@
                                         
                                         <!-- STUDENT PROFILE LINK -->
                                         <li>
-                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-user"></i>
                                                     <?php echo get_phrase('profile');?>
                                                 </a>
@@ -74,7 +74,7 @@
                                         
                                         <!-- STUDENT EDITING LINK -->
                                         <li>
-                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-pencil"></i>
                                                     <?php echo get_phrase('edit');?>
                                                 </a>
@@ -83,7 +83,7 @@
                                         
                                         <!-- STUDENT DELETION LINK -->
                                         <li>
-                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-trash"></i>
                                                     <?php echo get_phrase('delete');?>
                                                 </a>
@@ -139,7 +139,7 @@
                                         
                                         <!-- STUDENT PROFILE LINK -->
                                         <li>
-                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-user"></i>
                                                     <?php echo get_phrase('profile');?>
                                                 </a>
@@ -147,7 +147,7 @@
                                         
                                         <!-- STUDENT EDITING LINK -->
                                         <li>
-                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-pencil"></i>
                                                     <?php echo get_phrase('edit');?>
                                                 </a>
@@ -156,7 +156,7 @@
                                         
                                         <!-- STUDENT DELETION LINK -->
                                         <li>
-                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
+                                            <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-trash"></i>
                                                     <?php echo get_phrase('delete');?>
                                                 </a>

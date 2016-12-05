@@ -11,7 +11,7 @@
 			
 			<!-- panel body -->
 			<div class="panel-body">
-			<?php echo form_open(base_url() . 'index.php?admin/exam_marks_sms/send_sms' , array('target'=>'_top'));?>
+			<?php echo form_open(base_url() . 'admin/exam_marks_sms/send_sms' , array('target'=>'_top'));?>
 
 				<div class="form-group">
                     <div class="col-md-3">

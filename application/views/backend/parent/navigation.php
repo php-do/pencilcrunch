@@ -32,7 +32,7 @@
 
         <!-- DASHBOARD -->
         <li class="<?php if ($page_name == 'dashboard') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/dashboard">
+            <a href="<?php echo base_url(); ?>parents/dashboard">
                 <i class="entypo-gauge"></i>
                 <span><?php echo get_phrase('dashboard'); ?></span>
             </a>
@@ -42,7 +42,7 @@
 
         <!-- TEACHER -->
         <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/teacher_list">
+            <a href="<?php echo base_url(); ?>parents/teacher_list">
                 <i class="entypo-users"></i>
                 <span><?php echo get_phrase('teacher'); ?></span>
             </a>
@@ -62,7 +62,7 @@
                 foreach ($children_of_parent as $row):
             ?>
                 <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?parents/class_routine/<?php echo $row['student_id'];?>">
+                    <a href="<?php echo base_url(); ?>parents/class_routine/<?php echo $row['student_id'];?>">
                         <span><i class="entypo-dot"></i> <?php echo $row['name'];?></span>
                     </a>
                 </li>
@@ -82,7 +82,7 @@
                 foreach ($children_of_parent as $row):
             ?>
                 <li class="<?php if ($page_name == 'marks') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?parents/marks/<?php echo $row['student_id'];?>">
+                    <a href="<?php echo base_url(); ?>parents/marks/<?php echo $row['student_id'];?>">
                         <span><i class="entypo-dot"></i> <?php echo $row['name'];?></span>
                     </a>
                 </li>
@@ -101,7 +101,7 @@
                 foreach ($children_of_parent as $row):
             ?>
                 <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?parents/invoice/<?php echo $row['student_id'];?>">
+                    <a href="<?php echo base_url(); ?>parents/invoice/<?php echo $row['student_id'];?>">
                         <span><i class="entypo-dot"></i> <?php echo $row['name'];?></span>
                     </a>
                 </li>
@@ -112,7 +112,7 @@
 
         <!-- LIBRARY -->
         <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/book">
+            <a href="<?php echo base_url(); ?>parents/book">
                 <i class="entypo-book"></i>
                 <span><?php echo get_phrase('library'); ?></span>
             </a>
@@ -120,7 +120,7 @@
 
         <!-- TRANSPORT -->
         <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/transport">
+            <a href="<?php echo base_url(); ?>parents/transport">
                 <i class="entypo-location"></i>
                 <span><?php echo get_phrase('transport'); ?></span>
             </a>
@@ -128,7 +128,7 @@
 
         <!-- NOTICEBOARD -->
         <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/noticeboard">
+            <a href="<?php echo base_url(); ?>parents/noticeboard">
                 <i class="entypo-doc-text-inv"></i>
                 <span><?php echo get_phrase('noticeboard'); ?></span>
             </a>
@@ -136,7 +136,7 @@
 
         <!-- MESSAGE -->
         <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/message">
+            <a href="<?php echo base_url(); ?>parents/message">
                 <i class="entypo-mail"></i>
                 <span><?php echo get_phrase('message'); ?></span>
             </a>
@@ -144,7 +144,7 @@
 
         <!-- ACCOUNT -->
         <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?parents/manage_profile">
+            <a href="<?php echo base_url(); ?>parents/manage_profile">
                 <i class="entypo-lock"></i>
                 <span><?php echo get_phrase('account'); ?></span>
             </a>

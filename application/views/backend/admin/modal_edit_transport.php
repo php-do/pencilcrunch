@@ -5,7 +5,7 @@ $edit_data		=	$this->db->get_where('transport' , array('transport_id' => $param2
 <div class="tab-pane box active" id="edit" style="padding: 5px">
     <div class="box-content">
         <?php foreach($edit_data as $row):?>
-        <?php echo form_open(base_url() . 'index.php?admin/transport/do_update/'.$row['transport_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+        <?php echo form_open(base_url() . 'admin/transport/do_update/'.$row['transport_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo get_phrase('route_name');?></label>

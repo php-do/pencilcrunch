@@ -13,7 +13,7 @@ foreach ( $edit_data as $row):
             </div>
 			<div class="panel-body">
 				
-                <?php echo form_open(base_url() . 'index.php?admin/exam/edit/do_update/'.$row['exam_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                <?php echo form_open(base_url() . 'admin/exam/edit/do_update/'.$row['exam_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo get_phrase('name');?></label>

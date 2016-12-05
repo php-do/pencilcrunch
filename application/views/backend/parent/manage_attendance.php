@@ -10,7 +10,7 @@
            </tr>
        </thead>
 		<tbody>
-        	<form method="post" action="<?php echo base_url();?>index.php?teacher/attendance_selector" class="form">
+        	<form method="post" action="<?php echo base_url();?>teacher/attendance_selector" class="form">
             	<tr class="gradeA">
                     <td>
                     	<select name="date" class="form-control">
@@ -140,7 +140,7 @@
 						$status		= $attendance->status;
                     	?>
                         
-                        <form method="post" action="<?php echo base_url();?>index.php?teacher/manage_attendance/<?php echo $date.'/'.$month.'/'.$year.'/'.$class_id;?>">
+                        <form method="post" action="<?php echo base_url();?>teacher/manage_attendance/<?php echo $date.'/'.$month.'/'.$year.'/'.$class_id;?>">
                             <select name="status" class="form-control" style="width:100px; float:left;">
                                 <option value="0" <?php if($status == 0)echo 'selected="selected"';?>></option>
                                 <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Present</option>

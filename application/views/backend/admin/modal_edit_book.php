@@ -6,7 +6,7 @@ $edit_data		=	$this->db->get_where('book' , array('book_id' => $param2) )->resul
 <div class="tab-pane box active" id="edit" style="padding: 5px">
     <div class="box-content">
         <?php foreach($edit_data as $row):?>
-        <?php echo form_open(base_url() . 'index.php?admin/book/do_update/'.$row['book_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+        <?php echo form_open(base_url() . 'admin/book/do_update/'.$row['book_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo get_phrase('name');?></label>
                     <div class="col-sm-5">

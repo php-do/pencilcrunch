@@ -10,7 +10,7 @@
            </tr>
        </thead>
 		<tbody>
-        	<form method="post" action="<?php echo base_url();?>index.php?admin/attendance_selector" class="form">
+        	<form method="post" action="<?php echo base_url();?>admin/attendance_selector" class="form">
             	<tr class="gradeA">
                     <td>
                     	<select name="date" class="form-control">
@@ -166,7 +166,7 @@
 
 <!-- STUDENT's attendance submission form here -->
 <form method="post" 
-    action="<?php echo base_url();?>index.php?admin/manage_attendance/<?php echo $date.'/'.$month.'/'.$year.'/'.$class_id;?>">
+    action="<?php echo base_url();?>admin/manage_attendance/<?php echo $date.'/'.$month.'/'.$year.'/'.$class_id;?>">
         <div class="col-sm-offset-3 col-md-6">
             <table  class="table table-bordered">
         		<thead>

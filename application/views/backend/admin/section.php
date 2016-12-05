@@ -1,5 +1,5 @@
 <hr />
-<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_add/');" 
+<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/section_add/');" 
 	class="btn btn-primary pull-right">
     	<i class="entypo-plus-circled"></i>
 			<?php echo get_phrase('add_new_section');?>
@@ -17,7 +17,7 @@
 				foreach ($classes as $row):
 			?>
 				<li class="<?php if ($row['class_id'] == $class_id) echo 'active';?>">
-					<a href="<?php echo base_url();?>index.php?admin/section/<?php echo $row['class_id'];?>">
+					<a href="<?php echo base_url();?>admin/section/<?php echo $row['class_id'];?>">
 						<i class="entypo-dot"></i>
 						<?php echo get_phrase('class');?> <?php echo $row['name'];?>
 					</a>
@@ -65,7 +65,7 @@
 		                                    
 		                                    <!-- EDITING LINK -->
 		                                    <li>
-		                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_edit/<?php echo $row['section_id'];?>');">
+		                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/section_edit/<?php echo $row['section_id'];?>');">
 		                                            <i class="entypo-pencil"></i>
 		                                                <?php echo get_phrase('edit');?>
 		                                            </a>
@@ -74,7 +74,7 @@
 		                                    
 		                                    <!-- DELETION LINK -->
 		                                    <li>
-		                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/sections/delete/<?php echo $row['section_id'];?>');">
+		                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/sections/delete/<?php echo $row['section_id'];?>');">
 		                                            <i class="entypo-trash"></i>
 		                                                <?php echo get_phrase('delete');?>
 		                                            </a>

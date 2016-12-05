@@ -9,7 +9,7 @@
             </div>
 			<div class="panel-body">
 				
-                <?php echo form_open(base_url() . 'index.php?teacher/student/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
+                <?php echo form_open(base_url() . 'teacher/student/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 	
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('name');?></label>
@@ -167,7 +167,7 @@
 	function get_class_sections(class_id) {
 
     	$.ajax({
-            url: '<?php echo base_url();?>index.php?admin/get_class_section/' + class_id ,
+            url: '<?php echo base_url();?>admin/get_class_section/' + class_id ,
             success: function(response)
             {
                 jQuery('#section_selector_holder').html(response);

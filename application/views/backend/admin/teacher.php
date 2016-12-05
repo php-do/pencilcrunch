@@ -1,5 +1,5 @@
 
-            <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_teacher_add/');" 
+            <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_teacher_add/');" 
             	class="btn btn-primary pull-right">
                 <i class="entypo-plus-circled"></i>
             	<?php echo get_phrase('add_new_teacher');?>
@@ -32,7 +32,7 @@
                                         
                                         <!-- teacher EDITING LINK -->
                                         <li>
-                                        	<a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_teacher_edit/<?php echo $row['teacher_id'];?>');">
+                                        	<a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_teacher_edit/<?php echo $row['teacher_id'];?>');">
                                             	<i class="entypo-pencil"></i>
 													<?php echo get_phrase('edit');?>
                                                	</a>
@@ -41,7 +41,7 @@
                                         
                                         <!-- teacher DELETION LINK -->
                                         <li>
-                                        	<a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/teacher/delete/<?php echo $row['teacher_id'];?>');">
+                                        	<a href="#" onclick="confirm_modal('<?php echo base_url();?>admin/teacher/delete/<?php echo $row['teacher_id'];?>');">
                                             	<i class="entypo-trash"></i>
 													<?php echo get_phrase('delete');?>
                                                	</a>

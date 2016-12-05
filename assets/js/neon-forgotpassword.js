@@ -58,7 +58,7 @@ var neonForgotPassword = neonForgotPassword || {};
 					{
 						// Send data to the server
 						$.ajax({
-							url: baseurl + 'index.php?login/ajax_forgot_password',
+							url: baseurl + 'login/ajax_forgot_password',
 							method: 'POST',
 							dataType: 'json',
 							data: {

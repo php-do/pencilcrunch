@@ -7,7 +7,7 @@
 
 <div class="mail-compose">
 
-    <?php echo form_open(base_url() . 'index.php?admin/message/send_new/', array('class' => 'form', 'enctype' => 'multipart/form-data')); ?>
+    <?php echo form_open(base_url() . 'admin/message/send_new/', array('class' => 'form', 'enctype' => 'multipart/form-data')); ?>
 
 
     <div class="form-group">
