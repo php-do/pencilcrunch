@@ -89,8 +89,8 @@ $autoload['drivers'] = array();
 */
 
 $autoload['helper'] = array(
-	'url','file','form','security','string','inflector',
-	'directory','download','multi_language', 'html'
+    'url', 'file', 'form', 'security', 'string', 'inflector', 'directory', 'download', 'multi_language', 'html',
+    'globals'
 );
 
 
@@ -107,7 +107,7 @@ $autoload['helper'] = array(
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('pencilcrunch');
 
 
 /*
