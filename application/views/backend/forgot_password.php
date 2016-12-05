@@ -61,6 +61,7 @@
                             <?php echo $system_name; ?>
                         </h2>
                     </p>
+
                     <p class="description">Enter your email for resetting password.</p>
 
                     <!-- progress bar indicator -->

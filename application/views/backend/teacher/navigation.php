@@ -4,7 +4,7 @@
         <!-- logo -->
         <div class="logo" style="">
             <a href="<?php echo base_url(); ?>">
-                <img src="uploads/logo.png"  style="max-height:60px;"/>
+                <?php echo img(['src' => 'uploads/logo.png', 'style' => 'max-height:60px']); ?>
             </a>
         </div>
 
