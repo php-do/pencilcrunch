@@ -80,7 +80,7 @@
 			<!--<li class="sep"></li>-->
 			
 			<li>
-				<a href="<?php echo base_url();?>index.php?login/logout">
+				<a href="<?php echo site_url('index.php?login/logout'); ?>">
 					Log Out <i class="entypo-logout right"></i>
 				</a>
 			</li>
