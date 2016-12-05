@@ -8,16 +8,12 @@ if (!defined('BASEPATH'))
  *	marcosdavid1794@gmail.com
  */
 
-class Install extends CI_Controller
-{
+class Install extends CI_Controller {
     
-    
-    /***default functin, redirects to login page if no admin logged in yet***/
-    public function index()
-    {
+    /***default function, redirects to login page if no admin logged in yet***/
+    public function index(){
+
         $this->load->view('backend/install');
+        
     }
-    
-    
-    
 }

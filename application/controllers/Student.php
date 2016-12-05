@@ -28,9 +28,9 @@ class Student extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('student_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($this->session->userdata('student_login') == 1)
-            redirect(base_url() . 'index.php?student/dashboard', 'refresh');
+            redirect(base_url() . 'student/dashboard', 'refresh');
     }
     
     /***ADMIN DASHBOARD***/
@@ -103,10 +103,10 @@ class Student extends CI_Controller
             $page_data['subject_id'] = $this->input->post('subject_id');
             
             if ($page_data['exam_id'] > 0 && $page_data['class_id'] > 0 && $page_data['subject_id'] > 0) {
-                redirect(base_url() . 'index.php?student/marks/' . $page_data['exam_id'] . '/' . $page_data['class_id'] . '/' . $page_data['subject_id'], 'refresh');
+                redirect(base_url() . 'student/marks/' . $page_data['exam_id'] . '/' . $page_data['class_id'] . '/' . $page_data['subject_id'], 'refresh');
             } else {
                 $this->session->set_flashdata('mark_message', 'Choose exam, class and subject');
-                redirect(base_url() . 'index.php?student/marks/', 'refresh');
+                redirect(base_url() . 'student/marks/', 'refresh');
             }
         }
         $page_data['exam_id']    = $exam_id;
@@ -156,9 +156,9 @@ class Student extends CI_Controller
             $this->paypal->add_field('amount', $invoice_details->amount);
             $this->paypal->add_field('custom', $invoice_details->invoice_id);
             $this->paypal->add_field('business', $system_settings->description);
-            $this->paypal->add_field('notify_url', base_url() . 'index.php?student/invoice/paypal_ipn');
-            $this->paypal->add_field('cancel_return', base_url() . 'index.php?student/invoice/paypal_cancel');
-            $this->paypal->add_field('return', base_url() . 'index.php?student/invoice/paypal_success');
+            $this->paypal->add_field('notify_url', base_url() . 'student/invoice/paypal_ipn');
+            $this->paypal->add_field('cancel_return', base_url() . 'student/invoice/paypal_cancel');
+            $this->paypal->add_field('return', base_url() . 'student/invoice/paypal_success');
             
             $this->paypal->submit_paypal_post();
             // submit the fields to paypal
@@ -191,11 +191,11 @@ class Student extends CI_Controller
         }
         if ($param1 == 'paypal_cancel') {
             $this->session->set_flashdata('flash_message', get_phrase('payment_cancelled'));
-            redirect(base_url() . 'index.php?student/invoice/', 'refresh');
+            redirect(base_url() . 'student/invoice/', 'refresh');
         }
         if ($param1 == 'paypal_success') {
             $this->session->set_flashdata('flash_message', get_phrase('payment_successfull'));
-            redirect(base_url() . 'index.php?student/invoice/', 'refresh');
+            redirect(base_url() . 'student/invoice/', 'refresh');
         }
         $student_profile         = $this->db->get_where('student', array(
             'student_id'   => $this->session->userdata('student_id')
@@ -280,13 +280,13 @@ class Student extends CI_Controller
         if ($param1 == 'send_new') {
             $message_thread_code = $this->crud_model->send_new_private_message();
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?student/message/message_read/' . $message_thread_code, 'refresh');
+            redirect(base_url() . 'student/message/message_read/' . $message_thread_code, 'refresh');
         }
 
         if ($param1 == 'send_reply') {
             $this->crud_model->send_reply_message($param2);  //$param2 = message_thread_code
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?student/message/message_read/' . $param2, 'refresh');
+            redirect(base_url() . 'student/message/message_read/' . $param2, 'refresh');
         }
 
         if ($param1 == 'message_read') {
@@ -304,7 +304,7 @@ class Student extends CI_Controller
     function manage_profile($param1 = '', $param2 = '', $param3 = '')
     {
         if ($this->session->userdata('student_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($param1 == 'update_profile_info') {
             $data['name']        = $this->input->post('name');
             $data['email']       = $this->input->post('email');
@@ -313,7 +313,7 @@ class Student extends CI_Controller
             $this->db->update('student', $data);
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $this->session->userdata('student_id') . '.jpg');
             $this->session->set_flashdata('flash_message', get_phrase('account_updated'));
-            redirect(base_url() . 'index.php?student/manage_profile/', 'refresh');
+            redirect(base_url() . 'student/manage_profile/', 'refresh');
         }
         if ($param1 == 'change_password') {
             $data['password']             = $this->input->post('password');
@@ -332,7 +332,7 @@ class Student extends CI_Controller
             } else {
                 $this->session->set_flashdata('flash_message', get_phrase('password_mismatch'));
             }
-            redirect(base_url() . 'index.php?student/manage_profile/', 'refresh');
+            redirect(base_url() . 'student/manage_profile/', 'refresh');
         }
         $page_data['page_name']  = 'manage_profile';
         $page_data['page_title'] = get_phrase('manage_profile');

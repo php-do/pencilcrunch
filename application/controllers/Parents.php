@@ -28,9 +28,9 @@ class Parents extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('parent_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($this->session->userdata('parent_login') == 1)
-            redirect(base_url() . 'index.php?parents/dashboard', 'refresh');
+            redirect(base_url() . 'parents/dashboard', 'refresh');
     }
     
     /***ADMIN DASHBOARD***/
@@ -128,9 +128,9 @@ class Parents extends CI_Controller
             $this->paypal->add_field('amount', $invoice_details->amount);
             $this->paypal->add_field('custom', $invoice_details->invoice_id);
             $this->paypal->add_field('business', $system_settings->description);
-            $this->paypal->add_field('notify_url', base_url() . 'index.php?parents/invoice/paypal_ipn');
-            $this->paypal->add_field('cancel_return', base_url() . 'index.php?parents/invoice/paypal_cancel');
-            $this->paypal->add_field('return', base_url() . 'index.php?parents/invoice/paypal_success');
+            $this->paypal->add_field('notify_url', base_url() . 'parents/invoice/paypal_ipn');
+            $this->paypal->add_field('cancel_return', base_url() . 'parents/invoice/paypal_cancel');
+            $this->paypal->add_field('return', base_url() . 'parents/invoice/paypal_success');
             
             $this->paypal->submit_paypal_post();
             // submit the fields to paypal
@@ -163,11 +163,11 @@ class Parents extends CI_Controller
         }
         if ($param1 == 'paypal_cancel') {
             $this->session->set_flashdata('flash_message', get_phrase('payment_cancelled'));
-            redirect(base_url() . 'index.php?parents/invoice/' . $student_id, 'refresh');
+            redirect(base_url() . 'parents/invoice/' . $student_id, 'refresh');
         }
         if ($param1 == 'paypal_success') {
             $this->session->set_flashdata('flash_message', get_phrase('payment_successfull'));
-            redirect(base_url() . 'index.php?parents/invoice/' . $student_id, 'refresh');
+            redirect(base_url() . 'parents/invoice/' . $student_id, 'refresh');
         }
         $parent_profile         = $this->db->get_where('parent', array(
             'parent_id' => $this->session->userdata('parent_id')
@@ -249,13 +249,13 @@ class Parents extends CI_Controller
         if ($param1 == 'send_new') {
             $message_thread_code = $this->crud_model->send_new_private_message();
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?parents/message/message_read/' . $message_thread_code, 'refresh');
+            redirect(base_url() . 'parents/message/message_read/' . $message_thread_code, 'refresh');
         }
 
         if ($param1 == 'send_reply') {
             $this->crud_model->send_reply_message($param2);  //$param2 = message_thread_code
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?parents/message/message_read/' . $param2, 'refresh');
+            redirect(base_url() . 'parents/message/message_read/' . $param2, 'refresh');
         }
 
         if ($param1 == 'message_read') {
@@ -273,7 +273,7 @@ class Parents extends CI_Controller
     function manage_profile($param1 = '', $param2 = '', $param3 = '')
     {
         if ($this->session->userdata('parent_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($param1 == 'update_profile_info') {
             $data['name']        = $this->input->post('name');
             $data['email']       = $this->input->post('email');
@@ -281,7 +281,7 @@ class Parents extends CI_Controller
             $this->db->where('parent_id', $this->session->userdata('parent_id'));
             $this->db->update('parent', $data);
             $this->session->set_flashdata('flash_message', get_phrase('account_updated'));
-            redirect(base_url() . 'index.php?parents/manage_profile/', 'refresh');
+            redirect(base_url() . 'parents/manage_profile/', 'refresh');
         }
         if ($param1 == 'change_password') {
             $data['password']             = $this->input->post('password');
@@ -300,7 +300,7 @@ class Parents extends CI_Controller
             } else {
                 $this->session->set_flashdata('flash_message', get_phrase('password_mismatch'));
             }
-            redirect(base_url() . 'index.php?parents/manage_profile/', 'refresh');
+            redirect(base_url() . 'parents/manage_profile/', 'refresh');
         }
         $page_data['page_name']  = 'manage_profile';
         $page_data['page_title'] = get_phrase('manage_profile');

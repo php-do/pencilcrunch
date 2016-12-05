@@ -27,9 +27,9 @@ class Teacher extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('teacher_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($this->session->userdata('teacher_login') == 1)
-            redirect(base_url() . 'index.php?teacher/dashboard', 'refresh');
+            redirect(base_url() . 'teacher/dashboard', 'refresh');
     }
     
     /***TEACHER DASHBOARD***/
@@ -101,7 +101,7 @@ class Teacher extends CI_Controller
             $student_id = $this->db->insert_id();
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
             $this->email_model->account_opening_email('student', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
-            redirect(base_url() . 'index.php?teacher/student_add/' . $data['class_id'], 'refresh');
+            redirect(base_url() . 'teacher/student_add/' . $data['class_id'], 'refresh');
         }
         if ($param2 == 'do_update') {
             $data['name']        = $this->input->post('name');
@@ -120,13 +120,13 @@ class Teacher extends CI_Controller
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg');
             $this->crud_model->clear_cache();
             
-            redirect(base_url() . 'index.php?teacher/student_information/' . $param1, 'refresh');
+            redirect(base_url() . 'teacher/student_information/' . $param1, 'refresh');
         } 
 		
         if ($param2 == 'delete') {
             $this->db->where('student_id', $param3);
             $this->db->delete('student');
-            redirect(base_url() . 'index.php?teacher/student_information/' . $param1, 'refresh');
+            redirect(base_url() . 'teacher/student_information/' . $param1, 'refresh');
         }
     }
 
@@ -168,7 +168,7 @@ class Teacher extends CI_Controller
             $data['class_id']   = $this->input->post('class_id');
             $data['teacher_id'] = $this->input->post('teacher_id');
             $this->db->insert('subject', $data);
-            redirect(base_url() . 'index.php?teacher/subject/'.$data['class_id'], 'refresh');
+            redirect(base_url() . 'teacher/subject/'.$data['class_id'], 'refresh');
         }
         if ($param1 == 'do_update') {
             $data['name']       = $this->input->post('name');
@@ -177,7 +177,7 @@ class Teacher extends CI_Controller
             
             $this->db->where('subject_id', $param2);
             $this->db->update('subject', $data);
-            redirect(base_url() . 'index.php?teacher/subject/'.$data['class_id'], 'refresh');
+            redirect(base_url() . 'teacher/subject/'.$data['class_id'], 'refresh');
         } else if ($param1 == 'edit') {
             $page_data['edit_data'] = $this->db->get_where('subject', array(
                 'subject_id' => $param2
@@ -186,7 +186,7 @@ class Teacher extends CI_Controller
         if ($param1 == 'delete') {
             $this->db->where('subject_id', $param2);
             $this->db->delete('subject');
-            redirect(base_url() . 'index.php?teacher/subject/'.$param3, 'refresh');
+            redirect(base_url() . 'teacher/subject/'.$param3, 'refresh');
         }
 		 $page_data['class_id']   = $param1;
         $page_data['subjects']   = $this->db->get_where('subject' , array('class_id' => $param1))->result_array();
@@ -209,10 +209,10 @@ class Teacher extends CI_Controller
             $page_data['subject_id'] = $this->input->post('subject_id');
             
             if ($page_data['exam_id'] > 0 && $page_data['class_id'] > 0 && $page_data['subject_id'] > 0) {
-                redirect(base_url() . 'index.php?teacher/marks/' . $page_data['exam_id'] . '/' . $page_data['class_id'] . '/' . $page_data['subject_id'], 'refresh');
+                redirect(base_url() . 'teacher/marks/' . $page_data['exam_id'] . '/' . $page_data['class_id'] . '/' . $page_data['subject_id'], 'refresh');
             } else {
                 $this->session->set_flashdata('mark_message', 'Choose exam, class and subject');
-                redirect(base_url() . 'index.php?teacher/marks/', 'refresh');
+                redirect(base_url() . 'teacher/marks/', 'refresh');
             }
         }
         if ($this->input->post('operation') == 'update') {
@@ -223,7 +223,7 @@ class Teacher extends CI_Controller
             $this->db->where('mark_id', $this->input->post('mark_id'));
             $this->db->update('mark', $data);
             
-            redirect(base_url() . 'index.php?teacher/marks/' . $this->input->post('exam_id') . '/' . $this->input->post('class_id') . '/' . $this->input->post('subject_id'), 'refresh');
+            redirect(base_url() . 'teacher/marks/' . $this->input->post('exam_id') . '/' . $this->input->post('class_id') . '/' . $this->input->post('subject_id'), 'refresh');
         }
         $page_data['exam_id']    = $exam_id;
         $page_data['class_id']   = $class_id;
@@ -248,12 +248,12 @@ class Teacher extends CI_Controller
         if ($operation == 'restore') {
             $this->crud_model->restore_backup();
             $this->session->set_flashdata('backup_message', 'Backup Restored');
-            redirect(base_url() . 'index.php?teacher/backup_restore/', 'refresh');
+            redirect(base_url() . 'teacher/backup_restore/', 'refresh');
         }
         if ($operation == 'delete') {
             $this->crud_model->truncate($type);
             $this->session->set_flashdata('backup_message', 'Data removed');
-            redirect(base_url() . 'index.php?teacher/backup_restore/', 'refresh');
+            redirect(base_url() . 'teacher/backup_restore/', 'refresh');
         }
         
         $page_data['page_info']  = 'Create backup / restore from backup';
@@ -266,7 +266,7 @@ class Teacher extends CI_Controller
     function manage_profile($param1 = '', $param2 = '', $param3 = '')
     {
         if ($this->session->userdata('teacher_login') != 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+            redirect(base_url() . 'login', 'refresh');
         if ($param1 == 'update_profile_info') {
             $data['name']        = $this->input->post('name');
             $data['email']       = $this->input->post('email');
@@ -275,7 +275,7 @@ class Teacher extends CI_Controller
             $this->db->update('teacher', $data);
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/teacher_image/' . $this->session->userdata('teacher_id') . '.jpg');
             $this->session->set_flashdata('flash_message', get_phrase('account_updated'));
-            redirect(base_url() . 'index.php?teacher/manage_profile/', 'refresh');
+            redirect(base_url() . 'teacher/manage_profile/', 'refresh');
         }
         if ($param1 == 'change_password') {
             $data['password']             = $this->input->post('password');
@@ -294,7 +294,7 @@ class Teacher extends CI_Controller
             } else {
                 $this->session->set_flashdata('flash_message', get_phrase('password_mismatch'));
             }
-            redirect(base_url() . 'index.php?teacher/manage_profile/', 'refresh');
+            redirect(base_url() . 'teacher/manage_profile/', 'refresh');
         }
         $page_data['page_name']  = 'manage_profile';
         $page_data['page_title'] = get_phrase('manage_profile');
@@ -316,7 +316,7 @@ class Teacher extends CI_Controller
             $data['time_end']   = $this->input->post('time_end');
             $data['day']        = $this->input->post('day');
             $this->db->insert('class_routine', $data);
-            redirect(base_url() . 'index.php?teacher/class_routine/', 'refresh');
+            redirect(base_url() . 'teacher/class_routine/', 'refresh');
         }
         if ($param1 == 'edit' && $param2 == 'do_update') {
             $data['class_id']   = $this->input->post('class_id');
@@ -327,7 +327,7 @@ class Teacher extends CI_Controller
             
             $this->db->where('class_routine_id', $param3);
             $this->db->update('class_routine', $data);
-            redirect(base_url() . 'index.php?teacher/class_routine/', 'refresh');
+            redirect(base_url() . 'teacher/class_routine/', 'refresh');
         } else if ($param1 == 'edit') {
             $page_data['edit_data'] = $this->db->get_where('class_routine', array(
                 'class_routine_id' => $param2
@@ -336,7 +336,7 @@ class Teacher extends CI_Controller
         if ($param1 == 'delete') {
             $this->db->where('class_schedule_id', $param2);
             $this->db->delete('class_schedule');
-            redirect(base_url() . 'index.php?teacher/class_routine/', 'refresh');
+            redirect(base_url() . 'teacher/class_routine/', 'refresh');
         }
         $page_data['page_name']  = 'class_routine';
         $page_data['page_title'] = get_phrase('manage_class_routine');
@@ -363,7 +363,7 @@ class Teacher extends CI_Controller
             }
 
             $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?teacher/manage_attendance/'.$date.'/'.$month.'/'.$year.'/'.$class_id , 'refresh');
+            redirect(base_url() . 'teacher/manage_attendance/'.$date.'/'.$month.'/'.$year.'/'.$class_id , 'refresh');
         }
         $page_data['date']     =    $date;
         $page_data['month']    =    $month;
@@ -376,7 +376,7 @@ class Teacher extends CI_Controller
     }
     function attendance_selector()
     {
-        redirect(base_url() . 'index.php?teacher/manage_attendance/'.$this->input->post('date').'/'.
+        redirect(base_url() . 'teacher/manage_attendance/'.$this->input->post('date').'/'.
                     $this->input->post('month').'/'.
                         $this->input->post('year').'/'.
                             $this->input->post('class_id') , 'refresh');
@@ -419,7 +419,7 @@ class Teacher extends CI_Controller
             $data['notice']           = $this->input->post('notice');
             $data['create_timestamp'] = strtotime($this->input->post('create_timestamp'));
             $this->db->insert('noticeboard', $data);
-            redirect(base_url() . 'index.php?teacher/noticeboard/', 'refresh');
+            redirect(base_url() . 'teacher/noticeboard/', 'refresh');
         }
         if ($param1 == 'do_update') {
             $data['notice_title']     = $this->input->post('notice_title');
@@ -428,7 +428,7 @@ class Teacher extends CI_Controller
             $this->db->where('notice_id', $param2);
             $this->db->update('noticeboard', $data);
             $this->session->set_flashdata('flash_message', get_phrase('notice_updated'));
-            redirect(base_url() . 'index.php?teacher/noticeboard/', 'refresh');
+            redirect(base_url() . 'teacher/noticeboard/', 'refresh');
         } else if ($param1 == 'edit') {
             $page_data['edit_data'] = $this->db->get_where('noticeboard', array(
                 'notice_id' => $param2
@@ -437,7 +437,7 @@ class Teacher extends CI_Controller
         if ($param1 == 'delete') {
             $this->db->where('notice_id', $param2);
             $this->db->delete('noticeboard');
-            redirect(base_url() . 'index.php?teacher/noticeboard/', 'refresh');
+            redirect(base_url() . 'teacher/noticeboard/', 'refresh');
         }
         $page_data['page_name']  = 'noticeboard';
         $page_data['page_title'] = get_phrase('manage_noticeboard');
@@ -483,20 +483,20 @@ class Teacher extends CI_Controller
         {
             $this->crud_model->save_study_material_info();
             $this->session->set_flashdata('flash_message' , get_phrase('study_material_info_saved_successfuly'));
-            redirect(base_url() . 'index.php?teacher/study_material' , 'refresh');
+            redirect(base_url() . 'teacher/study_material' , 'refresh');
         }
         
         if ($task == "update")
         {
             $this->crud_model->update_study_material_info($document_id);
             $this->session->set_flashdata('flash_message' , get_phrase('study_material_info_updated_successfuly'));
-            redirect(base_url() . 'index.php?teacher/study_material' , 'refresh');
+            redirect(base_url() . 'teacher/study_material' , 'refresh');
         }
         
         if ($task == "delete")
         {
             $this->crud_model->delete_study_material_info($document_id);
-            redirect(base_url() . 'index.php?teacher/study_material');
+            redirect(base_url() . 'teacher/study_material');
         }
         
         $data['study_material_info']    = $this->crud_model->select_study_material_info();
@@ -517,13 +517,13 @@ class Teacher extends CI_Controller
         if ($param1 == 'send_new') {
             $message_thread_code = $this->crud_model->send_new_private_message();
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?teacher/message/message_read/' . $message_thread_code, 'refresh');
+            redirect(base_url() . 'teacher/message/message_read/' . $message_thread_code, 'refresh');
         }
 
         if ($param1 == 'send_reply') {
             $this->crud_model->send_reply_message($param2);  //$param2 = message_thread_code
             $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
-            redirect(base_url() . 'index.php?teacher/message/message_read/' . $param2, 'refresh');
+            redirect(base_url() . 'teacher/message/message_read/' . $param2, 'refresh');
         }
 
         if ($param1 == 'message_read') {
