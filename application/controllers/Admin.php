@@ -34,7 +34,7 @@ class Admin extends CI_Controller{
 			
 		$page_data['page_name']  = 'student_add';
 		$page_data['page_title'] = get_phrase('add_student');
-		$this->load->view('backend/index', compact('page_data'));
+		$this->load->view('backend/index', $page_data);
 	}
 	
 	function student_bulk_add($param1 = '')
